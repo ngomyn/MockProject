@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   private urlAPI = 'https://baas.kinvey.com/';
-  private appKey = 'kid_SyC2cqDiP';
+  private appKey = 'kid_rkUYTgX1u';
   private appSecret = 'e685a57423f041099f24a62356b96a3b';
   private masterAuth = "Basic a2lkX3JrVVlUZ1gxdTowZTYwNzJkYTk1ZjE0ZTBjYjkyYjU0MjEyNTA5NzAxZg=="
 
@@ -15,16 +15,13 @@ export class DataService {
   ) { }
 
   getData(){
-    const DataUrl = `${this.urlAPI}appdata/${this.appKey}/Category`;
-    const params = new HttpParams()
-      .set('parent_id',null)
+    const DataUrl = `${this.urlAPI}appdata/${this.appKey}/Category?query=`;
+    
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization: this.masterAuth
       }),
-      param: new HttpParams({
-        
-      })
+      param: new HttpParams().set('parent_id','')
     };
 
     return this.http.get<any>(DataUrl , httpOptions)
