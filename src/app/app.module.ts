@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+
 import { HeaderComponent } from './header/header.component';
+import { HeaderModule } from './header/header.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +15,9 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HeaderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
