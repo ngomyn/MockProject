@@ -15,15 +15,13 @@ export class DataService {
   ) { }
 
   getData(){
-    const DataUrl = `${this.urlAPI}appdata/${this.appKey}/Category?query=`;
-    
+    const DataUrl = `${this.urlAPI}appdata/${this.appKey}/Category`;    
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization: this.masterAuth
-      }),
-      param: new HttpParams().set('parent_id','')
+      }),      
     };
-
-    return this.http.get<any>(DataUrl , httpOptions)
+    const query = `?query={"parent_id":"null"}`;
+    return this.http.get<any>(DataUrl , httpOptions);
   }
 }

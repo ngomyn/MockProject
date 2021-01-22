@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/service/data.service';
+import { DataService } from '../../service/data.service'
 
 @Component({
   selector: 'app-navbar',
@@ -7,17 +7,27 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  navItem:any;
+  navBarArray=[];
+  navBarObject={};
   constructor(
-   private data: DataService
+    private dataService:DataService
   ) { }
 
   ngOnInit(): void {
-    this.data.getData().subscribe(
-      data => this.navItem = data,
-      () => console.log(this.navItem)
-      
-    )
+    this.test();
   }
-
+  test(){
+    this.dataService.getData().subscribe(data=>{
+      console.log(data);
+      this.navBarObject=data;
+      for (let i of data){
+        if(i.parent_id==null){
+        this.navBarArray.push(i.name);
+        }
+      }
+      console.log(data);
+    })
+  }
+      
+  
 }

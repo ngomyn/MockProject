@@ -7,17 +7,30 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HeaderComponent } from './header/header.component';
 import { HeaderModule } from './header/header.module';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { CopyrightComponent } from './footer/copyright/copyright.component';
+import { SiteMapComponent } from './footer/site-map/site-map.component';
+import { SideBarComponent } from './home/side-bar/side-bar.component';
+import { RecommendComponent } from './home/recommend/recommend.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    CopyrightComponent,
+    SiteMapComponent,
+    SideBarComponent,
+    RecommendComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
-    HttpClientModule
+    HttpClientModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

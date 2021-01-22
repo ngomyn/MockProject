@@ -1,0 +1,9 @@
+img{
+    max-width:60px ;
+}
+div.title{
+    padding:10px;
+    border-left: 1px grey solid;
+    border-right: 1px grey solid;
+    border-bottom: 1px grey solid;    
+}
