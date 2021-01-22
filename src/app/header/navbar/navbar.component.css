@@ -12,3 +12,13 @@
     margin-top: 0;
   }
 }
+.homeIcon{
+  font-size: 1.8rem;
+  color: white;
+  height: 100%;
+  padding:0 10px ;
+}
+.homeIcon:hover{
+  cursor: pointer;
+  color: black;  
+}
