@@ -1,0 +1,36 @@
+table{
+    width: 100%;
+}
+tr,th{
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    border-top: 1px solid grey;    
+    padding: 10px;
+}
+tbody tr:last-child {
+    border-bottom: 1px solid grey;    
+}
+tr {
+    text-decoration: none;    
+    padding: 10px;
+    display: flex;
+}
+tr a{
+    color: #F09217;
+}
+tr a:hover{
+    color:black;
+}
+.subtopicBox{
+    display: flex;
+    flex-direction: column; 
+    flex-wrap: wrap;
+}
+p img{
+    max-width: 40px;
+    margin: 10px;
+}
+div.subtopicBox p:hover{
+    background-color: #b3d4fc;
+    cursor: pointer;
+}

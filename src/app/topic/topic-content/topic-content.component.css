@@ -1,0 +1,13 @@
+p img{
+    max-width: 40px;
+    margin: 10px;
+}
+div p:hover{
+    background-color: #b3d4fc;
+    cursor: pointer;
+}
+.subtopicBox{
+    display: flex;
+    flex-direction: column; 
+    flex-wrap: wrap;
+}

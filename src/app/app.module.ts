@@ -13,6 +13,10 @@ import { CopyrightComponent } from './footer/copyright/copyright.component';
 import { SiteMapComponent } from './footer/site-map/site-map.component';
 import { SideBarComponent } from './home/side-bar/side-bar.component';
 import { RecommendComponent } from './home/recommend/recommend.component';
+import { TopicComponent } from './topic/topic.component';
+import { TopicContentComponent } from './topic/topic-content/topic-content.component';
+import { SubtopicComponent } from './topic/subtopic/subtopic.component';
+import { SubtopicContentComponent } from './topic/subtopic/subtopic-content/subtopic-content.component';
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import { RecommendComponent } from './home/recommend/recommend.component';
     CopyrightComponent,
     SiteMapComponent,
     SideBarComponent,
-    RecommendComponent
+    RecommendComponent,
+    TopicComponent,
+    TopicContentComponent,
+    SubtopicComponent,
+    SubtopicContentComponent
   ],
   imports: [
     BrowserModule,
