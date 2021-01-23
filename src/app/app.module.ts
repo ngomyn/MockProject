@@ -13,11 +13,15 @@ import { CopyrightComponent } from './footer/copyright/copyright.component';
 import { SiteMapComponent } from './footer/site-map/site-map.component';
 import { SideBarComponent } from './home/side-bar/side-bar.component';
 import { RecommendComponent } from './home/recommend/recommend.component';
+<<<<<<< Updated upstream
 import { TopicComponent } from './topic/topic.component';
 import { TopicContentComponent } from './topic/topic-content/topic-content.component';
 import { SubtopicComponent } from './topic/subtopic/subtopic.component';
 import { SubtopicContentComponent } from './topic/subtopic/subtopic-content/subtopic-content.component';
 
+=======
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -38,7 +42,8 @@ import { SubtopicContentComponent } from './topic/subtopic/subtopic-content/subt
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
-    HttpClientModule    
+    HttpClientModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
