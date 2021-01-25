@@ -12,13 +12,21 @@
     margin-top: 0;
   }
 }
-.homeIcon{
+.homeIcon {
   font-size: 1.8rem;
   color: white;
   height: 100%;
-  padding:0 10px ;
+  padding: 0 10px;
 }
-.homeIcon:hover{
+.homeIcon:hover {
   cursor: pointer;
-  color: black;  
+  color: black;
+}
+#categoty {
+  position: absolute;
+  width: 800px;
+}
+#categoty > li {
+  position: relative;
+  float: left;
 }

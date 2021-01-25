@@ -29,9 +29,20 @@
                   {{ component.name }}
                 </a>
 
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#"> </a>
+                <ul
+                  id="categoty"
+                  class="dropdown-menu"
+                  *ngIf="component.child !== null"
+                >
+                  <li *ngFor="let items of component.child">
+                    <a class="dropdown-item" href="#"
+                      ><b>{{ items.name }}</b></a
+                    >
+                    <ul *ngIf="items.child !== null">
+                      <li *ngFor="let item of items.child">
+                        <a class="dropdown-item" href="#">{{ item.name }}</a>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </li>

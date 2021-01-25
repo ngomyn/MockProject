@@ -9,10 +9,10 @@ import { HeaderComponent } from './header/header.component';
 import { HeaderModule } from './header/header.module';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { CopyrightComponent } from './footer/copyright/copyright.component';
-import { SiteMapComponent } from './footer/site-map/site-map.component';
+
 import { SideBarComponent } from './home/side-bar/side-bar.component';
 import { RecommendComponent } from './home/recommend/recommend.component';
+import { FooterModule } from './footer/footer.module';
 
 
 @NgModule({
@@ -21,8 +21,6 @@ import { RecommendComponent } from './home/recommend/recommend.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CopyrightComponent,
-    SiteMapComponent,
     SideBarComponent,
     RecommendComponent
   ],
@@ -30,6 +28,7 @@ import { RecommendComponent } from './home/recommend/recommend.component';
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
+    FooterModule,
     HttpClientModule    
   ],
   providers: [],

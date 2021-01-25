@@ -10,8 +10,8 @@ import { DataService } from '../../service/data.service'
 export class NavbarComponent implements OnInit {
   navBarCategory1=[];
   navBarCategory2=[];
-  child1 = []
-  child2 = []
+  child1 : any
+  child2 : any
   constructor(
     private dataService:DataService
   ) { }
@@ -19,18 +19,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.showCategory();
   }
-  // test(){
-  //   this.dataService.getData().subscribe(data=>{
-  //     this.navBarObject=data;
-  //     for (let i of data){
-  //       if(i.parent_id==null){
-  //       this.navBarArray.push(i.name);
-  //       }
-  //     }
-  //     console.log(data);
-  //   })
-  // }
-      
   showCategory(){
     this.dataService.getData().subscribe(
       data => {
@@ -43,21 +31,16 @@ export class NavbarComponent implements OnInit {
               item.child.push(i);
             }
           })
-          item.child.forEach((element) => {
-            element.children = []
+          item.child.forEach((grand) => {
+            grand.child = []
             this.navBarCategory2.forEach((x) => {
-              if(x.parent_id == element._id){
-                element.children.push(x);
+              if(x.parent_id == grand._id){
+                grand.child.push(x);
               }
             })
-            this.child2 = element.children
           })
-          this.child1 = item.child
         })
-        
         console.log(this.navBarCategory1);
-        console.log(this.navBarCategory2);
-        
       }
     )
   }
