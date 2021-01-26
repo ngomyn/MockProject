@@ -19,6 +19,7 @@ import { SubtopicComponent } from './topic/subtopic/subtopic.component';
 import { SubtopicContentComponent } from './topic/subtopic/subtopic-content/subtopic-content.component';
 
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     AppRoutingModule,
     HeaderModule,
     HttpClientModule,
-    CKEditorModule
+    CKEditorModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
