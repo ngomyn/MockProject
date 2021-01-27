@@ -20,6 +20,7 @@ import { SubtopicContentComponent } from './topic/subtopic/subtopic-content/subt
 
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { DataService } from './service/data.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     CKEditorModule,
     EditorModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,20 +9,21 @@ export class DataService {
   private urlAPI = 'https://baas.kinvey.com/';
   private appKey = 'kid_rkUYTgX1u';
   private appSecret = 'e685a57423f041099f24a62356b96a3b';
-  private masterAuth = "Basic a2lkX3JrVVlUZ1gxdTowZTYwNzJkYTk1ZjE0ZTBjYjkyYjU0MjEyNTA5NzAxZg=="
-
+  private masterAuth = "Basic a2lkX3JrVVlUZ1gxdTowZTYwNzJkYTk1ZjE0ZTBjYjkyYjU0MjEyNTA5NzAxZg==";
+  public url = "";
+  navBarCategory=[];
   constructor(
     private http: HttpClient
   ) { }
-
-  getData(){
-    const DataUrl = `${this.urlAPI}appdata/${this.appKey}/Category`;    
+  
+  getData(id){
+    const DataUrl = `${this.urlAPI}appdata/${this.appKey}/Category/`;    
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization: this.masterAuth
       }),      
     };
     const query = `?query={"parent_id":"null"}`;
-    return this.http.get<any>(DataUrl , httpOptions);
+    return this.http.get<any>(DataUrl + id, httpOptions);
   }
 }

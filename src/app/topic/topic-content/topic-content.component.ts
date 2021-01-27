@@ -18,7 +18,7 @@ export class TopicContentComponent implements OnInit {
     this.test();
   }
   test(){
-    this.dataService.getData().subscribe(data=>{            
+    this.dataService.getData("").subscribe(data=>{            
       for (let i of data){
         if(i.parent_id=='600584515e529c0013607e46'){
         this.topics.push(i.name);

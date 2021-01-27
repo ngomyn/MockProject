@@ -22,3 +22,6 @@
   cursor: pointer;
   color: black;  
 }
+a:hover{
+  cursor: pointer;
+}

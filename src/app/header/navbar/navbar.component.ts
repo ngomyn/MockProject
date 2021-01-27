@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../service/data.service'
+import { Router } from '@angular/router';
+import { DataService } from '../../service/data.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -12,14 +14,19 @@ export class NavbarComponent implements OnInit {
   child1 : any
   child2 : any
   constructor(
-    private dataService:DataService
+    private dataService:DataService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
-    this.showCategory();
+    if(this.dataService.navBarCategory!=null){      
+      this.showCategory();
+    }
+    else {console.log('oke');}    
   }
   showCategory(){
-    this.dataService.getData().subscribe(
+    const subject = new Subject();
+    this.dataService.getData("").subscribe(
       data => {
         this.navBarCategory1 = data.filter((item)=> item.parent_id == null);
         this.navBarCategory2 = data.filter((item)=> item.parent_id)
@@ -40,7 +47,24 @@ export class NavbarComponent implements OnInit {
           })
         })
         console.log(this.navBarCategory1);
+        this.dataService.navBarCategory=this.navBarCategory1;
+        subject.next(this.navBarCategory1);
       }
     )
+  }
+  toTopic(id){
+    console.log(id);
+    this.dataService.url= id;
+    this.router.navigate(['/topic']);
+  };
+  toSubTopic(id){
+    console.log(id);
+    this.dataService.getData(id).subscribe(data=>{
+      console.log(data);
+      // this.router.navigate(['/subtopic']);
+    })
+  };
+  goHome(){
+    this.router.navigateByUrl("");
   }
 }

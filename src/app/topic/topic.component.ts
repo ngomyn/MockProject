@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-topic',
@@ -6,10 +7,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
+  data =[];
+  topics =[];
+  constructor(
+    private dataService:DataService
+  ) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {    
+    if(this.dataService.navBarCategory!=null){      
+      this.getData(this.dataService.url);
+    }
+    else {console.log('oke');}    
+  }  
+  getData(id){    
+    this.dataService.getData(id).subscribe(data=>{
+      this.data=data;      
+      for (let i of this.dataService.navBarCategory){
+        if(i._id==id){
+          this.topics.push(i.child);
+          break;
+        }
+        else {
+          for (let u of i.child){
+            if(u._id==id){
+              this.topics.push(u.child);
+              break;
+            }
+          }
+        }
+      } 
+      console.log(this.topics);
+    });
+  }  
 }

@@ -2,7 +2,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="homeIcon">
-        <i class="fa fa-home" aria-hidden="true"></i>
+        <i class="fa fa-home" aria-hidden="true" (click)="goHome()"></i>
       </div>
 
       <button
@@ -22,9 +22,8 @@
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
-                  data-toggle="dropdown"
-                  *ngIf="component.parent_id == null"
+                  
+                  data-toggle="dropdown"                  
                 >
                   {{ component.name }}
                 </a>
@@ -35,12 +34,13 @@
                   *ngIf="component.child !== null"
                 >
                   <li *ngFor="let items of component.child">
-                    <a class="dropdown-item" href="#"
+                    <a class="dropdown-item" (click)="toTopic(items._id);$event.stopPropagation()"
                       ><b>{{ items.name }}</b></a
                     >
                     <ul *ngIf="items.child !== null">
                       <li *ngFor="let item of items.child">
-                        <a class="dropdown-item" href="#">{{ item.name }}</a>
+                        <a class="dropdown-item" (click)="toSubTopic(item._id);$event.stopPropagation()"
+                        >{{ item.name }}</a>
                       </li>
                     </ul>
                   </li>
