@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-recommend',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommend.component.css']
 })
 export class RecommendComponent implements OnInit {
-
-  constructor() { }
+  recData=[];
+  constructor(
+    private dataService:DataService
+  ) { }
 
   ngOnInit(): void {
+    this.fetchData();
   }
-
+  fetchData(){
+    this.dataService.getData("").subscribe(data=>{
+      this.recData=data.slice(0,4);
+      console.log(this.recData);
+    })
+  }
 }
