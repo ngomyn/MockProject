@@ -47,8 +47,7 @@ export class DataService {
             }
           })
         })
-      });
-      console.log("navbar:" + navBarCategory1);
+      });      
       return navBarCategory1;
     }));
   }
