@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as ClassicEditor from '@ckeditor/ckeditor5-angular';
+
+
+
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,12 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-angular';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public Editor = ClassicEditor;
-  constructor() { }
+  
+  constructor(
+    
+  ) { }
 
   ngOnInit(): void {
   }
-
+  
 }

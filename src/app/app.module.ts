@@ -21,6 +21,7 @@ import { SubtopicContentComponent } from './topic/subtopic/subtopic-content/subt
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { DataService } from './service/data.service';
+import { KinveyModule } from 'kinvey-angular-sdk';
 
 @NgModule({
   declarations: [
@@ -43,9 +44,15 @@ import { DataService } from './service/data.service';
     HeaderModule,
     HttpClientModule,
     CKEditorModule,
-    EditorModule
+    EditorModule,
+    KinveyModule.init({
+      appKey: 'kid_rkUYTgX1u',
+      appSecret: '0e6072da95f14e0cb92b54212509701f'
+    })
   ],
-  providers: [DataService],
+  providers: [
+    DataService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../service/data.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-
-  constructor() { }
+  private posts=[];
+  constructor(
+    private dataService:DataService
+  ) { }
 
   ngOnInit(): void {
+    this.getData();
   }
-
+  private getData(){
+    this.dataService.getNewPost().subscribe(data=>{
+      this.posts = data;
+      this.posts.reverse();
+    })
+  }
 }
