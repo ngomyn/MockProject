@@ -23,3 +23,6 @@ figure .fa{
 .fa-skype:hover{
     background-color:#1DA1F2;
 }
+img.site-icon:hover{
+    cursor: pointer;
+}

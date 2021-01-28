@@ -1,4 +1,4 @@
-<div style="background-color: white;">
+<div style="background-color: white;margin-bottom: 35px;">
     <!-- <div class="form-group">
         <label for="file">Choose File</label>
         <input type="file"
@@ -6,21 +6,26 @@
                (change)="handleFileInput($event.target.files)">        
     </div> -->
     <h2>Học lập trình online miễn phí</h2>
-    <p>Freetuts là trang web học lập trình online miễn phí với các chủ đề: lập trình / các môn học / công nghệ / review sản phẩm tốt nhất đến với độc giả.</p>
-    <p>Tham gia nhóm hỗ trợ cài đặt website WordPress miễn phí <a href="">tại đây</a>.</p>
+    <p>Freetuts là trang web học lập trình online miễn phí với các chủ đề: lập trình / 
+        các môn học / công nghệ / review sản phẩm tốt nhất đến với độc giả.</p>
+    <p style="border: 3px dotted green;padding: 20px 20px;">Tham gia nhóm hỗ trợ cài đặt website WordPress miễn phí <a href="">tại đây</a>.</p>
 </div>
-<div class="reccomend" style="border: solid 1px grey;" *ngFor="let rec of recData">
-    <p style="background-color: cadetblue;padding: 10px;">{{ rec.name }}</p>
+<div class="reccomend" style="border: solid 1px grey;min-height: 450px;" *ngFor="let rec of recData">
+    <p style="background-color: #2f6e91;
+        padding:10px;
+        margin-bottom: 0;
+        color: white;"
+        ><strong>{{ rec.name | uppercase }}</strong></p>
     <div class="container" >
         <div class="main-item">
             <div >
                 <img  src="{{'assets/bash-logo.jpg'}}" style="max-width: 100%;" alt=""><br>
-                <p>
+                <p style="margin: 10px 0;padding:0 10px;">
                     <strong>{{ rec.child[0].name }}</strong> 
                 </p>
                             
                 <p>
-                    Trước tiên bạn cần tìm hiểu một chút về khái niệm Regular Expression trong Linux là gì đã nhé ...
+                    {{ rec.child[0].description }}
                 </p>
             </div>            
         </div>

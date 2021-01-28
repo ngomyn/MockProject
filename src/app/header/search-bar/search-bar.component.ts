@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -9,7 +10,8 @@ import { DOCUMENT } from '@angular/common';
 export class SearchBarComponent implements OnInit {
 
   constructor(
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -32,5 +34,8 @@ export class SearchBarComponent implements OnInit {
               window.scrollTo(0, currentScroll - (currentScroll / 8));
           }
       })();
+  }
+  goHome(){
+    this.router.navigateByUrl("");
   }
 }

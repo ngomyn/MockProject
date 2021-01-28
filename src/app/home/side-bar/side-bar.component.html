@@ -1,9 +1,13 @@
 <div>
-    <p style="background-color: teal;padding:10px">BÀI VIẾT MỚI</p>
+    <p style="background-color: #2f6e91;
+        padding:10px;
+        margin-bottom: 0;
+        color: white;"        
+        ><strong>BÀI VIẾT MỚI</strong></p>
     <div *ngFor="let post of posts | slice:0:4; let i=index">
         <div class="title" style="border-top: 1px grey solid;">
-            <img src="{{'assets/bash-logo.jpg'}}" alt="">
-            <span>{{ post.name }}</span>
+            <a href="#"><img src="{{ post.img }}" alt="" style="display: inline-block;"></a>
+            <p><a href="">{{ post.name }}</a></p>
         </div> 
     </div>
        
